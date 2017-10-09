@@ -94,15 +94,15 @@ Feature: Site Manager administer groups
     When I click "11 datasets"
     Then I should see "Displaying 1 - 10 of 11 datasets"
 
-  @group_all_05 @disablecaptcha
-  Scenario: View the list of group members
-    Given I am logged in as "Gabriel"
-    And I am on "Group 01" page
-    When I click "Members" in the "group block" region
-    Then I should see "Gabriel" in the "group members" region
-    And I should see "Katie" in the "group members" region
-    And I should not see "Jaz" in the "group members" region
-    And I should not see "John" in the "group members" region
+  # @group_all_05 @disablecaptcha
+  # Scenario: View the list of group members
+  #   Given I am logged in as "Gabriel"
+  #   And I am on "Group 01" page
+  #   When I click "Members" in the "group block" region
+  #   Then I should see "Gabriel" in the "group members" region
+  #   And I should see "Katie" in the "group members" region
+  #   And I should not see "Jaz" in the "group members" region
+  #   And I should not see "John" in the "group members" region
 
   @group_all_06
   Scenario: Search datasets on group
@@ -171,3 +171,14 @@ Feature: Site Manager administer groups
     Given I am on "Group 01" page
     Then I should see "Group 01" in the ".group-membership" element
     Then I should see "Education02" in the ".name" element
+
+  @group_all_05 @disablecaptcha
+  Scenario: View the list of group members
+    Given I am logged in as "Gabriel"
+    And I am on "Group 01" page
+    When I click "Members" in the "group block" region
+    Then I should see "Gabriel" in the "group members" region
+    And I should see "Katie" in the "group members" region
+    And I should not see "Jaz" in the "group members" region
+    And I should not see "John" in the "group members" region
+
