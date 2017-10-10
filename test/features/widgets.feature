@@ -25,3 +25,14 @@ Feature: Widgets
     And I should see "Visualization"
     Then I press "Close Window"
     Then I press "Cancel"
+
+  Scenario: Adds "Visualization embed" block to home page using panels ipe editor
+    Given the cache has been cleared
+    When I follow "visualization"
+    And I wait for "Configure new Visualization"
+    And I select "remote" from "source_origin"
+    And I fill in "edit-remote-source" with "http://demo.getdkan.com/node/7/recline-embed#{view-graph:{graphOptions:{hooks:{processOffset:{},bindEvents:{}}}},graphOptions:{hooks:{processOffset:{},bindEvents:{}}}}"
+    And I press "Finish"
+    And I wait for "Visualization embed"
+    Then I should see "Visualization embed"
+    
